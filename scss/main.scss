@@ -1,0 +1,345 @@
+$green: #00df3f;
+$red: #eb2222;
+$yellow: rgb(251, 227, 48);
+$blue: #1597ff;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+  align-items: center;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  .center-logo {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    border-radius: 4px;
+    img {
+      width: 60px;
+      height: auto;
+    }
+  }
+  .header {
+    span {
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: 200;
+      width: 300px;
+      z-index: 2;
+      opacity: 0.8;
+      transition: 0.2s all ease-in-out;
+      color: black;
+      cursor: pointer;
+      span {
+        display: inline;
+        position: unset;
+      }
+      &.red {
+        color: $red;
+      }
+      &.blue {
+        color: $blue;
+      }
+      &.yellow {
+        color: $yellow;
+      }
+      &.green {
+        color: $green;
+      }
+    }
+  }
+  .column {
+    width: 50%;
+    height: 100%;
+    &-top,
+    &-bottom {
+      height: calc(50% - 80px);
+      position: relative;
+      text-align: center;
+      border-radius: 4px;
+      flex: 1;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+      border: solid 1px white;
+      margin: 40px;
+      overflow: hidden;
+    }
+  }
+  .middle-column {
+    transition: 0.2s all ease-in-out;
+    position: absolute;
+    transform: scale(0);
+    width: calc(50% - 80px);
+    height: 100%;
+    max-height: 480px;
+    background: white;
+    z-index: 3;
+    padding: 30px;
+    font-size: 14px;
+    border-radius: 4px;
+    line-height: 1.6;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 6;
+    font-weight: 200;
+    & > div {
+      position: relative;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+    img {
+      width: 60px;
+      display: block;
+      height: auto;
+      margin: 10px auto;
+      text-align: center;
+    }
+    div[data-id="about-us"] {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 65px;
+        left: -110px;
+        width: 96px;
+        height: 1px;
+        background: $red;
+        border-radius: 1px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        left: -15px;
+        width: 1px;
+        height: 80%;
+        background: $red;
+        border-radius: 1px;
+      }
+    }
+    div[data-id="who-we-serve"] {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -110px;
+        width: 96px;
+        height: 1px;
+        border-radius: 1px;
+        background: $blue;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        left: -15px;
+        width: 1px;
+        border-radius: 1px;
+        bottom: 0;
+        background: $blue;
+      }
+    }
+    div[data-id="what-we-are"] {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 65px;
+        right: -110px;
+        width: 96px;
+        height: 1px;
+        border-radius: 1px;
+        background: $green;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        right: -15px;
+        width: 1px;
+        border-radius: 1px;
+        height: 60%;
+        background: $green;
+      }
+    }
+    div[data-id="our-writers"] {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -110px;
+        width: 96px;
+        height: 1px;
+        border-radius: 1px;
+        background: $yellow;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        right: -15px;
+        width: 1px;
+        border-radius: 1px;
+        bottom: 0;
+        background: $yellow;
+      }
+    }
+  }
+}
+
+.team {
+  background: rgb(244, 244, 244);
+  padding: 40px 0;
+
+  display: block;
+  &__row {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  &__header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 200;
+    margin-bottom: 30px;
+  }
+  &__member {
+    width: calc(20% - 10px);
+    height: 230px;
+    position: relative;
+    border: solid 1px white;
+    background: white;
+    margin: 5px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    &--image {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      width: 140px;
+      height: 140px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        border-radius: 50%;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &--name {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      width: auto;
+      overflow: hidden;
+      transform: translateX(-50%);
+      color: black;
+      padding: 10px;
+      border-radius: 4px;
+      background: white;
+      font-weight: 200;
+    }
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: radiate 7s infinite;
+  transition: 2s all ease-in-out;
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  &.red-circle {
+    border: solid 8px $red;
+  }
+  &.blue-circle {
+    border: solid 8px $blue;
+  }
+  &.green-circle {
+    border: solid 8px $green;
+  }
+  &.yellow-circle {
+    border: solid 8px $yellow;
+  }
+}
+
+@keyframes radiate {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+.column-top[data-id="about-us"] {
+  border: solid 1px $red;
+}
+.column-bottom[data-id="who-we-serve"] {
+  border: solid 1px $blue;
+}
+.column-top[data-id="what-we-are"] {
+  border: solid 1px $green;
+}
+.column-bottom[data-id="our-writers"] {
+  border: solid 1px $yellow;
+}
+
+.bold-red {
+  font-weight: bold;
+  color: $red;
+  font-style: italic;
+}
+
+.bold-blue {
+  font-weight: bold;
+  color: $blue;
+  font-style: italic;
+}
+.bold-green {
+  font-weight: bold;
+  color: $green;
+  font-style: italic;
+}
+.bold-yellow {
+  font-weight: bold;
+  background: $yellow;
+  font-style: italic;
+}

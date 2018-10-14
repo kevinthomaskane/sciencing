@@ -1,0 +1,333 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+  align-items: center;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.row .center-logo {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  border-radius: 4px;
+}
+.row .center-logo img {
+  width: 60px;
+  height: auto;
+}
+.row .header span {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: 200;
+  width: 300px;
+  z-index: 2;
+  opacity: 0.8;
+  transition: 0.2s all ease-in-out;
+  color: black;
+  cursor: pointer;
+}
+.row .header span span {
+  display: inline;
+  position: unset;
+}
+.row .header span.red {
+  color: #eb2222;
+}
+.row .header span.blue {
+  color: #1597ff;
+}
+.row .header span.yellow {
+  color: #fbe330;
+}
+.row .header span.green {
+  color: #00df3f;
+}
+.row .column {
+  width: 50%;
+  height: 100%;
+}
+.row .column-top, .row .column-bottom {
+  height: calc(50% - 80px);
+  position: relative;
+  text-align: center;
+  border-radius: 4px;
+  flex: 1;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
+  border: solid 1px white;
+  margin: 40px;
+  overflow: hidden;
+}
+.row .middle-column {
+  transition: 0.2s all ease-in-out;
+  position: absolute;
+  transform: scale(0);
+  width: calc(50% - 80px);
+  height: 100%;
+  max-height: 480px;
+  background: white;
+  z-index: 3;
+  padding: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  line-height: 1.6;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 6;
+  font-weight: 200;
+}
+.row .middle-column > div {
+  position: relative;
+}
+.row .middle-column ul {
+  padding: 0;
+  list-style: none;
+}
+.row .middle-column img {
+  width: 60px;
+  display: block;
+  height: auto;
+  margin: 10px auto;
+  text-align: center;
+}
+.row .middle-column div[data-id=about-us]::before {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: -110px;
+  width: 96px;
+  height: 1px;
+  background: #eb2222;
+  border-radius: 1px;
+}
+.row .middle-column div[data-id=about-us]::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: -15px;
+  width: 1px;
+  height: 80%;
+  background: #eb2222;
+  border-radius: 1px;
+}
+.row .middle-column div[data-id=who-we-serve]::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -110px;
+  width: 96px;
+  height: 1px;
+  border-radius: 1px;
+  background: #1597ff;
+}
+.row .middle-column div[data-id=who-we-serve]::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: -15px;
+  width: 1px;
+  border-radius: 1px;
+  bottom: 0;
+  background: #1597ff;
+}
+.row .middle-column div[data-id=what-we-are]::before {
+  content: "";
+  position: absolute;
+  top: 65px;
+  right: -110px;
+  width: 96px;
+  height: 1px;
+  border-radius: 1px;
+  background: #00df3f;
+}
+.row .middle-column div[data-id=what-we-are]::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  right: -15px;
+  width: 1px;
+  border-radius: 1px;
+  height: 60%;
+  background: #00df3f;
+}
+.row .middle-column div[data-id=our-writers]::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -110px;
+  width: 96px;
+  height: 1px;
+  border-radius: 1px;
+  background: #fbe330;
+}
+.row .middle-column div[data-id=our-writers]::after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  right: -15px;
+  width: 1px;
+  border-radius: 1px;
+  bottom: 0;
+  background: #fbe330;
+}
+
+.team {
+  background: #f4f4f4;
+  padding: 40px 0;
+  display: block;
+}
+.team__row {
+  justify-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.team__header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+.team__member {
+  width: calc(20% - 10px);
+  height: 230px;
+  position: relative;
+  border: solid 1px white;
+  background: white;
+  margin: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.team__member--image {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.team__member--image img {
+  height: 100%;
+  border-radius: 50%;
+  transition: 0.2s all ease-in-out;
+}
+.team__member--image img:hover {
+  transform: scale(1.1);
+}
+.team__member--name {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: auto;
+  overflow: hidden;
+  transform: translateX(-50%);
+  color: black;
+  padding: 10px;
+  border-radius: 4px;
+  background: white;
+  font-weight: 200;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: radiate 7s infinite;
+  transition: 2s all ease-in-out;
+}
+.circle:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.circle:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.circle.red-circle {
+  border: solid 8px #eb2222;
+}
+.circle.blue-circle {
+  border: solid 8px #1597ff;
+}
+.circle.green-circle {
+  border: solid 8px #00df3f;
+}
+.circle.yellow-circle {
+  border: solid 8px #fbe330;
+}
+
+@keyframes radiate {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+.column-top[data-id=about-us] {
+  border: solid 1px #eb2222;
+}
+
+.column-bottom[data-id=who-we-serve] {
+  border: solid 1px #1597ff;
+}
+
+.column-top[data-id=what-we-are] {
+  border: solid 1px #00df3f;
+}
+
+.column-bottom[data-id=our-writers] {
+  border: solid 1px #fbe330;
+}
+
+.bold-red {
+  font-weight: bold;
+  color: #eb2222;
+  font-style: italic;
+}
+
+.bold-blue {
+  font-weight: bold;
+  color: #1597ff;
+  font-style: italic;
+}
+
+.bold-green {
+  font-weight: bold;
+  color: #00df3f;
+  font-style: italic;
+}
+
+.bold-yellow {
+  font-weight: bold;
+  background: #fbe330;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=main.css.map */
